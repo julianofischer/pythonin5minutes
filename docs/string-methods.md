@@ -59,18 +59,86 @@ False
 ```
 
 ### isdigit
+Returns `True` if all the characters are digits, otherwise `False`.
+
+```python
+>>> msg = "123"
+>>> msg.isdigit()
+True
+>>> msg = "1two3"
+>>> msg.isdigit()
+False
+```
 
 ### islower
+Returns `True` if all the characters are in lower case, otherwise `False`.
+
+```python
+>>> msg = "hello world!"
+>>> msg.islower()
+True
+>>> msg = "Hello world!"
+>>> msg.islower()
+False
+```
 
 ### isnumeric
+Returns `True` if all the characters are numeric, otherwise `False`.
+
+```python
+>>> msg = "123"
+>>> msg.isnumeric()
+True
+>>> msg = "onetwothree"
+>>> msg.isnumeric()
+False
+>>> msg = "123!"
+>>> msg.isnumeric()
+False
+```
 
 ### istitle
+Returns `True` if all the string is title-cased, otherwise `False`.  A title-cased string is the one in which every first letter of the word is an uppercase character.
+
+```python
+>>> msg = "Hello World!"
+>>> msg.istitle()
+True
+>>> msg = "Hello world!"
+>>> msg.istitle()
+False
+```
 
 ### isspace
+Returns `True` if all the characters in a string are whitespaces, otherwise False
+```python
+>>> msg = "     "
+>>> msg.isspace()
+True
+>>> msg = "     ."
+>>> msg.isspace()
+False
+```
 
 ### isupper
+Returns `True` if all the string is title-cased, otherwise `False`.
+
+```python
+>>> msg = "HELLO WORLD!"
+>>> msg.isupper()
+True
+>>> msg = "HELLO WORLd!"
+>>> msg.isupper()
+False
+```
 
 ### lower
+Returns a copy of the string where all characters are lower case.
+```python
+>>> msg = "HELLO WORLD!"
+>>> msg.lower()
+'hello world!'
+```
 
 ### replace
 
