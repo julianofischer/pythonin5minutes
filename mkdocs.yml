@@ -4,6 +4,7 @@ nav:
     - basic_types.md
     - numeric.md
     - strings.md
+    - string-methods.md
     - lists.md
     - tuples.md
     - dicts.md
