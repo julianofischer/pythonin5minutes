@@ -141,15 +141,72 @@ Returns a copy of the string where all characters are lower case.
 ```
 
 ### replace
+ Returns a copy of the string where a specified substring is replaced with another specified substring
+
+```python
+>>> msg = "I like Java!"
+>>> msg.replace("Java", "Python")
+'I like Python!'
+```
 
 ### split
+Splits a string into a list taking a separator. The default separator is whitespace.
+```python
+>>> msg = "apple banana orange"
+>>> msg.split()
+['apple', 'banana', 'orange']
+>>> msg.split(" ")
+['apple', 'banana', 'orange']
+>>> msg = "apple,banana,orange"
+>>> msg.split(",")
+['apple', 'banana', 'orange']
+```
 
 ### strip
+Removes any specified characteres at the beginning and at the end of the string. The default character to remove is whitespace.
+
+```python
+>>> msg = " hello world "
+>>> msg.strip()
+'hello world'
+>>> msg = "hello worldh"
+>>> msg.strip("h")
+'ello world'
+```
 
 ### startswith
+Return `True` if the string  with the specified suffix, otherwise return `False`.
+
+```python
+>>> msg = "hello world"
+>>> msg.startswith("h")
+True
+>>> msg.startswith("hello")
+True
+>>> msg.startswith("world")
+False
+```
 
 ### swapcase
+Returns a copy of the string where all upper case characterest are lower case and vice versa.
+```python
+>>> msg = "Hello World!"
+>>> msg.swapcase()
+'hELLO wORLD!'
+```
 
 ### title
+Returns a string where the first character in every word is upper case.
+```python
+>>> msg = "hello world!"
+>>> msg.title()
+'Hello World!'
+```
 
 ### upper
+Returns a copy of the string where all characters are upper case.
+```python
+>>> msg = "hello world!"
+>>> msg.lower()
+'HELLO WORLD!'
+```
