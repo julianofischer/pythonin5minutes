@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Juliano Fischer Naves" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Strings in 5 minutes - Python in 5 Minutes (or less)</title>
+    <title>String methods - Python in 5 Minutes (or less)</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Strings in 5 minutes";
-        var mkdocs_page_input_path = "strings.md";
+        var mkdocs_page_name = "String methods";
+        var mkdocs_page_input_path = "string-methods.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -52,18 +52,52 @@
                 <li class="toctree-l1"><a class="reference internal" href="../numeric/">Numeric types in 5 minutes</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">Strings in 5 minutes</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#formatting-strings">Formatting strings</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#slicing">Slicing</a>
-    </li>
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../strings/">Strings in 5 minutes</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../string-methods/">String methods</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">String methods</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#capitalize">capitalize</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#count">count</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#endswith">endswith</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#find">find</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#isalpha">isalpha</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#isdigit">isdigit</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#islower">islower</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#isnumeric">isnumeric</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#istitle">istitle</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#isspace">isspace</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#isupper">isupper</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#lower">lower</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#replace">replace</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#split">split</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#strip">strip</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#startswith">startswith</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#swapcase">swapcase</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#title">title</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#upper">upper</a>
+    </li>
+    </ul>
                 </li>
               </ul>
               <ul>
@@ -96,7 +130,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>Strings in 5 minutes</li>
+      <li>String methods</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -105,69 +139,60 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="strings-in-5-minutes">Strings in 5 minutes</h1>
-<p>Textual information in Python is handled by a <code>str</code> object. Strings are immutable and are written in three distinct ways:</p>
-<ul>
-<li>Using single quotes: 'Hey you!'</li>
-<li>Using double quotes: "Hey you!"</li>
-<li>Using trippled single ou double quotes: """Hey you!""", '''Hey you'''</li>
-</ul>
-<p>Single quote strings allows embedded double quote strings: <code>'embedded "double quotes"'</code>. In the same way, double quote strings allows embedded single quote strings: <code>"embedded 'single quotes'"</code>. </p>
-<p>Trippled quoted strings are also known as <strong>raw strings</strong> because they can span multiple lines. For instance you can write:</p>
-<pre class="highlight"><code class="language-python">&gt;&gt;&gt; msg = "Hello\nworld"
-&gt;&gt;&gt; print(msg)
-Hello
-world</code></pre>
-<p>Or alternatively using <strong>raw strings</strong>:</p>
-<pre class="highlight"><code class="language-python">&gt;&gt;&gt; msg = """Hello
-... world"""
-&gt;&gt;&gt; print(msg)
-Hello
-world</code></pre>
-<p>Strings that are part of a single expression separated only by whitespaces will be converted to a string.</p>
-<pre class="highlight"><code class="language-python">&gt;&gt;&gt; msg = ("hello " "world")
-&gt;&gt;&gt; print(msg)
-hello world</code></pre>
-<h2 id="formatting-strings">Formatting strings</h2>
-<p>Python provides several ways to format strings, but the quick an easiest way to do it is by using <em>f-strings</em>. By using <em>f-strings</em> you are able do embed values to your string:</p>
-<pre class="highlight"><code class="language-python">&gt;&gt;&gt; what = "world"
-&gt;&gt;&gt; msg = f"Hello {what}"
-&gt;&gt;&gt; print(msg)
+                <h2 id="strings-methods-in-5-minutes">Strings methods in 5 minutes</h2>
+<p>Python has several string handy methods. Following are some of them.</p>
+<h3 id="capitalize">capitalize</h3>
+<p>Return a capitalized copy of the sequence.</p>
+<pre class="highlight"><code class="language-python">&gt;&gt;&gt; msg = "hello world"
+&gt;&gt;&gt; print(msg.capitalize())
 Hello world</code></pre>
-<p>Note that <em>f-strings</em> begin with an <code>f</code> and we use curly braces to wrap the variables which we want to embed the value in the target string.</p>
-<h2 id="slicing">Slicing</h2>
-<p>Since strings are sequences, we can use slice operations to return a range of characters by using the slice syntax. To do so, we need to specify the start and end position separated by a colon:</p>
-<p><pre class="highlight"><code class="language-python">&gt;&gt;&gt; msg = "Hello world"
-&gt;&gt;&gt; print(msg[0:5])
-Hello</code></pre>
-Note that the starting position is inclusive and the ending position is exclusive, which means in practice that the above example is slicing the string from position 0 up to position 4.</p>
-<p>You can also specify a third parameter to the slicing syntax which will be assumed as a step. The below slice could be read as: <em>from 0 up to 10 every two chars</em>.</p>
+<h3 id="count">count</h3>
+<p>Return the number of non-overlapping occurrences of a substring in the string.</p>
+<pre class="highlight"><code class="language-python">&gt;&gt;&gt; msg = "hello world. cruel world."
+&gt;&gt;&gt; print(msg.count("world"))
+2</code></pre>
+<h3 id="endswith">endswith</h3>
+<p>Return <code>True</code> if the string ends with the specified suffix, otherwise return <code>False</code>.</p>
 <pre class="highlight"><code class="language-python">&gt;&gt;&gt; msg = "Hello world"
-&gt;&gt;&gt; print(msg[0:11:2])
-Hlowrd
-&gt;&gt;&gt; </code></pre>
-<p>By omitting the starting position, Python will assume 0. By omitting the ending position, Python will assume that you want to slice up to the end of the string.</p>
+&gt;&gt;&gt; print(msg.endswith("world"))
+True
+&gt;&gt;&gt; print(msg.endswith("Hello"))
+False</code></pre>
+<h3 id="find">find</h3>
+<p>Return the lowest index in the string where substring sub is found within the target string.</p>
+<pre class="highlight"><code class="language-python">&gt;&gt;&gt;       #0123456      
+&gt;&gt;&gt; msg = "hello world. cruel world."
+&gt;&gt;&gt; print(msg.find("world"))
+6</code></pre>
+<h3 id="isalpha">isalpha</h3>
+<p>Return <code>True</code> if all characters in the string are alphabetic and there is at least one character, <code>False</code> otherwise.</p>
+<pre class="highlight"><code class="language-python">&gt;&gt;&gt; msg = "Helloworld"
+&gt;&gt;&gt; msg.isalpha()
+True</code></pre>
+<p>Note that spaces are not considered alphabetic characters.</p>
 <pre class="highlight"><code class="language-python">&gt;&gt;&gt; msg = "Hello world"
-&gt;&gt;&gt; print(msg[:5])
-Hello
-&gt;&gt;&gt; print(msg[6:])
-world</code></pre>
-<p>You can use negative index to specify characters from the end of the string to the beginning of the string, -1 meaning the last character, -2 meaning the second-to-last, and so on.</p>
-<pre class="highlight"><code class="language-python">&gt;&gt;&gt; msg = "Hello world"
-&gt;&gt;&gt; print(msg[:-1])
-Hello worl
-&gt;&gt;&gt; print(msg[:-2])
-Hello wor</code></pre>
-<p>The slicing syntax provide us the most badass way to reverse a string:</p>
-<pre class="highlight"><code class="language-python">&gt;&gt;&gt; msg = "reverse this"
-&gt;&gt;&gt; print(msg[::-1])
-siht esrever</code></pre>
+&gt;&gt;&gt; msg.isalpha()
+False</code></pre>
+<h3 id="isdigit">isdigit</h3>
+<h3 id="islower">islower</h3>
+<h3 id="isnumeric">isnumeric</h3>
+<h3 id="istitle">istitle</h3>
+<h3 id="isspace">isspace</h3>
+<h3 id="isupper">isupper</h3>
+<h3 id="lower">lower</h3>
+<h3 id="replace">replace</h3>
+<h3 id="split">split</h3>
+<h3 id="strip">strip</h3>
+<h3 id="startswith">startswith</h3>
+<h3 id="swapcase">swapcase</h3>
+<h3 id="title">title</h3>
+<h3 id="upper">upper</h3>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../numeric/" class="btn btn-neutral float-left" title="Numeric types in 5 minutes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../string-methods/" class="btn btn-neutral float-right" title="String methods">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../strings/" class="btn btn-neutral float-left" title="Strings in 5 minutes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../lists/" class="btn btn-neutral float-right" title="Lists in 5 minutes">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -190,10 +215,10 @@ siht esrever</code></pre>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../numeric/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../strings/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../string-methods/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../lists/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

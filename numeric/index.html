@@ -65,6 +65,10 @@
                 </li>
               </ul>
               <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../string-methods/">String methods</a>
+                </li>
+              </ul>
+              <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../lists/">Lists in 5 minutes</a>
                 </li>
               </ul>
@@ -107,43 +111,34 @@
 <p>There are 3 distinct <strong>numeric types</strong>: integers, floating point numbers, and complex numbers.</p>
 <h2 id="integers">Integers</h2>
 <p>An integer is a whole number without decimal places. For instance <code>18</code> is an integer but <code>18.1</code> is not. The name for the integer data type is <code>int</code> and you can check the type of a value using the <code>type</code> function.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">int</span><span class="s1">&#39;&gt;</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-python">&gt;&gt;&gt; type(18)
+&lt;class 'int'&gt;</code></pre>
 <p>You can use the <code>int()</code> function to create integers. The following is the same as <code>x = 18</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># x is now 18</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-python">x = int(18)
+# x is now 18</code></pre>
 <p>You can also use <code>int()</code> to convert from string values to integer values:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s2">&quot;18&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># x is now 18</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-python">x = int("18")
+# x is now 18</code></pre>
 <p>For readability purposes, you can use underscores (_) to group digits:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">x</span> <span class="o">=</span> <span class="mi">1_000_000_000</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># x is 1000000000</span>
-</code></pre></div></p>
+<pre class="highlight"><code class="language-python">x = 1_000_000_000
+# x is 1000000000</code></pre></p>
 <p>An integer has no theoretical maximum limit in python, so, you can have a integer as big as this one:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">x</span> <span class="o">=</span> <span class="mi">1_000_000_000_000_000_000</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># 1 quintillion</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-python">x = 1_000_000_000_000_000_000
+# 1 quintillion</code></pre>
 <p>In practice, the biggest value you can represent in Python will depend on your computer's memory.</p>
 <h2 id="floating-pointing-numbers">Floating pointing numbers</h2>
 <p>An floating pointing number (or float) is a number with decimal places. For instance <code>18</code> is not a float but <code>18.1</code> is. The name for the float data type is <code>float</code> and you can check the type of a value using the <code>type</code> function.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="mf">18.1</span><span class="p">)</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">float</span><span class="s1">&#39;&gt;</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-python">&gt;&gt;&gt; type(18.1)
+&lt;class 'float'&gt;</code></pre>
 <p>You can use the <code>float()</code> function to create integers. The following is the same as <code>x = 18.18</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="mf">18.18</span><span class="p">)</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># x is now 18.18</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-python">x = float(18.18)
+# x is now 18.18</code></pre>
 <p>You can also use <code>float()</code> to convert from string values to integer values:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;18.18&quot;</span><span class="p">)</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># x is now 18.18</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-python">x = float("18.18")
+# x is now 18.18</code></pre>
 <p>As well as an integer, a float has no theoretical maximum limit in python, so, you can have a float like this one:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">x</span> <span class="o">=</span> <span class="mf">1_000_000_000_000_000.12</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1"># 1 quintillion plus some decimal places</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-python">x = 1_000_000_000_000_000.12
+# 1 quintillion plus some decimal places</code></pre>
 <p>However, if you need to preserve the decimal places without rouding or losing precision, you should use the <a href="https://docs.python.org/3/library/decimal.html">decimal</a> module.</p>
 <h2 id="operations">Operations</h2>
 <p>Integers and floats support the following operations:</p>
