@@ -174,19 +174,108 @@ True</code></pre>
 &gt;&gt;&gt; msg.isalpha()
 False</code></pre>
 <h3 id="isdigit">isdigit</h3>
+<p>Returns <code>True</code> if all the characters are digits, otherwise <code>False</code>.</p>
+<pre class="highlight"><code class="language-python">&gt;&gt;&gt; msg = "123"
+&gt;&gt;&gt; msg.isdigit()
+True
+&gt;&gt;&gt; msg = "1two3"
+&gt;&gt;&gt; msg.isdigit()
+False</code></pre>
 <h3 id="islower">islower</h3>
+<p>Returns <code>True</code> if all the characters are in lower case, otherwise <code>False</code>.</p>
+<pre class="highlight"><code class="language-python">&gt;&gt;&gt; msg = "hello world!"
+&gt;&gt;&gt; msg.islower()
+True
+&gt;&gt;&gt; msg = "Hello world!"
+&gt;&gt;&gt; msg.islower()
+False</code></pre>
 <h3 id="isnumeric">isnumeric</h3>
+<p>Returns <code>True</code> if all the characters are numeric, otherwise <code>False</code>.</p>
+<pre class="highlight"><code class="language-python">&gt;&gt;&gt; msg = "123"
+&gt;&gt;&gt; msg.isnumeric()
+True
+&gt;&gt;&gt; msg = "onetwothree"
+&gt;&gt;&gt; msg.isnumeric()
+False
+&gt;&gt;&gt; msg = "123!"
+&gt;&gt;&gt; msg.isnumeric()
+False</code></pre>
 <h3 id="istitle">istitle</h3>
+<p>Returns <code>True</code> if all the string is title-cased, otherwise <code>False</code>.  A title-cased string is the one in which every first letter of the word is an uppercase character.</p>
+<pre class="highlight"><code class="language-python">&gt;&gt;&gt; msg = "Hello World!"
+&gt;&gt;&gt; msg.istitle()
+True
+&gt;&gt;&gt; msg = "Hello world!"
+&gt;&gt;&gt; msg.istitle()
+False</code></pre>
 <h3 id="isspace">isspace</h3>
+<p>Returns <code>True</code> if all the characters in a string are whitespaces, otherwise False
+<pre class="highlight"><code class="language-python">&gt;&gt;&gt; msg = "     "
+&gt;&gt;&gt; msg.isspace()
+True
+&gt;&gt;&gt; msg = "     ."
+&gt;&gt;&gt; msg.isspace()
+False</code></pre></p>
 <h3 id="isupper">isupper</h3>
+<p>Returns <code>True</code> if all the string is title-cased, otherwise <code>False</code>.</p>
+<pre class="highlight"><code class="language-python">&gt;&gt;&gt; msg = "HELLO WORLD!"
+&gt;&gt;&gt; msg.isupper()
+True
+&gt;&gt;&gt; msg = "HELLO WORLd!"
+&gt;&gt;&gt; msg.isupper()
+False</code></pre>
 <h3 id="lower">lower</h3>
+<p>Returns a copy of the string where all characters are lower case.
+<pre class="highlight"><code class="language-python">&gt;&gt;&gt; msg = "HELLO WORLD!"
+&gt;&gt;&gt; msg.lower()
+'hello world!'</code></pre></p>
 <h3 id="replace">replace</h3>
+<p>Returns a copy of the string where a specified substring is replaced with another specified substring</p>
+<pre class="highlight"><code class="language-python">&gt;&gt;&gt; msg = "I like Java!"
+&gt;&gt;&gt; msg.replace("Java", "Python")
+'I like Python!'</code></pre>
 <h3 id="split">split</h3>
+<p>Splits a string into a list taking a separator. The default separator is whitespace.
+<pre class="highlight"><code class="language-python">&gt;&gt;&gt; msg = "apple banana orange"
+&gt;&gt;&gt; msg.split()
+['apple', 'banana', 'orange']
+&gt;&gt;&gt; msg.split(" ")
+['apple', 'banana', 'orange']
+&gt;&gt;&gt; msg = "apple,banana,orange"
+&gt;&gt;&gt; msg.split(",")
+['apple', 'banana', 'orange']</code></pre></p>
 <h3 id="strip">strip</h3>
+<p>Removes any specified characteres at the beginning and at the end of the string. The default character to remove is whitespace.</p>
+<pre class="highlight"><code class="language-python">&gt;&gt;&gt; msg = " hello world "
+&gt;&gt;&gt; msg.strip()
+'hello world'
+&gt;&gt;&gt; msg = "hello worldh"
+&gt;&gt;&gt; msg.strip("h")
+'ello world'</code></pre>
 <h3 id="startswith">startswith</h3>
+<p>Return <code>True</code> if the string  with the specified suffix, otherwise return <code>False</code>.</p>
+<pre class="highlight"><code class="language-python">&gt;&gt;&gt; msg = "hello world"
+&gt;&gt;&gt; msg.startswith("h")
+True
+&gt;&gt;&gt; msg.startswith("hello")
+True
+&gt;&gt;&gt; msg.startswith("world")
+False</code></pre>
 <h3 id="swapcase">swapcase</h3>
+<p>Returns a copy of the string where all upper case characterest are lower case and vice versa.
+<pre class="highlight"><code class="language-python">&gt;&gt;&gt; msg = "Hello World!"
+&gt;&gt;&gt; msg.swapcase()
+'hELLO wORLD!'</code></pre></p>
 <h3 id="title">title</h3>
+<p>Returns a string where the first character in every word is upper case.
+<pre class="highlight"><code class="language-python">&gt;&gt;&gt; msg = "hello world!"
+&gt;&gt;&gt; msg.title()
+'Hello World!'</code></pre></p>
 <h3 id="upper">upper</h3>
+<p>Returns a copy of the string where all characters are upper case.
+<pre class="highlight"><code class="language-python">&gt;&gt;&gt; msg = "hello world!"
+&gt;&gt;&gt; msg.lower()
+'HELLO WORLD!'</code></pre></p>
               
             </div>
           </div><footer>
